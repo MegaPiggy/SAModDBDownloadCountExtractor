@@ -27,7 +27,7 @@ jobs:
       - name: Get database log 
         run: |
           cd smol-ame-mod-database
-          git log -p > log.txt
+          git log -U5 --full-index -p > log.txt
           cd ..
         
       - name: Convert log.txt to json
