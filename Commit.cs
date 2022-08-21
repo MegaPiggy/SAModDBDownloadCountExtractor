@@ -36,7 +36,7 @@ struct Commit
 			if (item.StartsWith("@@") || item == lines[^1])
 			{
 				var update = new ModDatabaseUpdate(lineStorage.ToArray(), Time);
-				updates.Add(update);
+				if (update.DownloadCountChange > 0) updates.Add(update);
 				lineStorage.Clear();
 				continue;
 			}
